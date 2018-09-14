@@ -69,8 +69,8 @@ import com.github.restdriver.serverdriver.http.response.Response;
 public final class RestServerDriver {
     
     private static final int DEFAULT_HTTP_PROXY_PORT = 80;
-    public static final long DEFAULT_CONNECTION_TIMEOUT = System.getProperty("connectionTimeout", 10000);
-    public static final long DEFAULT_SOCKET_TIMEOUT = System.getProperty("socketTimeout", 10000);
+    public static final long DEFAULT_CONNECTION_TIMEOUT = Long.parseLong(System.getProperty("connectionTimeout", "10000"));
+    public static final long DEFAULT_SOCKET_TIMEOUT = Long.parseLong(System.getProperty("socketTimeout", "10000"));
     
     private static final String USER_AGENT = "User-Agent";
     private static final String DEFAULT_USER_AGENT = "rest-server-driver/" + RestDriverProperties.getVersion();
